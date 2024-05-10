@@ -52,7 +52,7 @@ function createPokemon(pokemon) {
   spriteContainer.classList.add("img-container");
 
   const sprite = document.createElement("img");
-  sprite.src = pokemon.sprites.front_default;
+  sprite.src = pokemon.sprites.other.showdown.front_default;
 
   spriteContainer.appendChild(sprite);
 
