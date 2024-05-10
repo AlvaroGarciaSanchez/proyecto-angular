@@ -11,19 +11,20 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 </head>
 <body>
+  <nav class="pagination" aria-label="...">
+    <ul class="pagination">
+      <li class="page-item" id="previous">
+        <a class="page-link" href="#" tabindex="-1">Anterior</a>
+      </li>
+      <li class="page-item" id="next">
+        <a class="page-link" href="#">Siguiente</a>
+      </li>
+    </ul>
+  </nav>
   <img class="header__logo" id="header__home" src="/src/assets/descarga.png" alt="">
     <div class="pokemon-container">
     </div>
-    <nav class="pagination" aria-label="...">
-        <ul class="pagination">
-          <li class="page-item" id="previous">
-            <a class="page-link" href="#" tabindex="-1">Anterior</a>
-          </li>
-          <li class="page-item" id="next">
-            <a class="page-link" href="#">Siguiente</a>
-          </li>
-        </ul>
-      </nav>
+    
     <div id="spinner" class="spinner-border text-light" role="status">
         <span class="visually-hidden">Loading...</span>
       </div>
