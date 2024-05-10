@@ -2,15 +2,17 @@ body {
     background: rgb(85, 144, 189);
     background: linear-gradient(
       90deg,
-      #25d0ffdf 0%,
-      rgb(122, 255, 226) 54%,
+      #257cffdf 0%,
+      rgb(122, 204, 255) 54%,
       rgb(123, 244, 224) 82%
     );
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     font-family: sans-serif;
   }
+  /* */
 
+  
   header__logo {
     margin-top: auto;
     color: white;
