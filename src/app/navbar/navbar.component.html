@@ -1,10 +1,16 @@
 <header>
-    <h2 class="logo">Logo</h2>
+  <div class="row-cols-3 ">
+    <a [routerLink]="['/inicio']">
+      <img src="../../assets/logo.png" height="36" width="100"/>
+    </a>
+
     <nav class="navigation">
-      <a href="#">Home</a>
-      <a href="../pokedex/pokedex.component.html">Pokedex</a>
-      <a a (click)="navigateToPokedex">Api</a>
-      <button class="btnLogin-popup">Login</button>
+      <a routerLink="inicio">Home</a>
+      <a routerLink="pokedex">Pokedex</a>
+      <a href="https://pokeapi.co/">Api</a>
+      <button class="btnLogin-popup" routerLink="login">Login</button>
     </nav>
+  </div>
   </header>
+
 

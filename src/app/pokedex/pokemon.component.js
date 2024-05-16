@@ -1,27 +1,18 @@
-import { Component } from '@angular/core';
-
-@Component({
-  selector: 'app-pokedex',
-  standalone: true,
-  imports: [],
-  templateUrl: './pokedex.component.html',
-  styleUrl: './pokedex.component.css'
-})
-export class PokedexComponent {
-
-}
-const listaPokemon = document.querySelector<HTMLDivElement>("#listaPokemon");
-const botonesHeader = document.querySelectorAll<HTMLButtonElement>(".btn-header");
-const url = "https://pokeapi.co/api/v2/pokemon/";
+// const sprite = document.createElement("img");
+// sprite.src = pokemon.sprites.other.showdown.front_default;
+const listaPokemon = document.querySelector("#listaPokemon");
+const botonesHeader = document.querySelectorAll(".btn-header");
+let URL = "https://pokeapi.co/api/v2/pokemon/";
 
 for (let i = 1; i <= 151; i++) {
-  fetch(url + i)
+  fetch(URL + i)
     .then((response) => response.json())
-    .then((data: any) => mostrarPokemon(data));
+    .then(data => mostrarPokemon(data))
 }
 
-function mostrarPokemon(poke: any) {
-  let tipos = poke.types.map((type: any) => `<p class="${type.type.name} tipo">${type.type.name}</p>`);
+function mostrarPokemon(poke) {
+
+  let tipos = poke.types.map((type) => `<p class="${type.type.name} tipo">${type.type.name}</p>`);
   tipos = tipos.join('');
 
   let pokeId = poke.id.toString();
@@ -30,6 +21,7 @@ function mostrarPokemon(poke: any) {
   } else if (pokeId.length === 2) {
     pokeId = "0" + pokeId;
   }
+
 
   const div = document.createElement("div");
   div.classList.add("pokemon");
@@ -52,29 +44,28 @@ function mostrarPokemon(poke: any) {
             </div>
         </div>
     `;
-  listaPokemon?.append(div);
+  listaPokemon.append(div);
 }
 
 botonesHeader.forEach(boton => boton.addEventListener("click", (event) => {
-  const botonId = (event.currentTarget as HTMLButtonElement).id;
+  const botonId = event.currentTarget.id;
 
-  // @ts-ignore
-  listaPokemon.innerHTML="";
+  listaPokemon.innerHTML = "";
 
   for (let i = 1; i <= 151; i++) {
-    fetch(url + i)
+    fetch(URL + i)
       .then((response) => response.json())
-      .then((data: any) => {
+      .then(data => {
 
         if(botonId === "ver-todos") {
           mostrarPokemon(data);
         } else {
-          const tipos = data.types.map((type: any) => type.type.name);
-          if (tipos.some((tipo: string) => tipo.includes(botonId))) {
+          const tipos = data.types.map(type => type.type.name);
+          if (tipos.some(tipo => tipo.includes(botonId))) {
             mostrarPokemon(data);
           }
         }
 
-      });
+      })
   }
-}));
+}))
