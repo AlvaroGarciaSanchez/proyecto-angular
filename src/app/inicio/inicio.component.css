@@ -22,6 +22,7 @@ iframe{
   transition: height .2s ease;
 }
 .caja .titulo{
-margin-bottom: 280px;
+margin-top: 20px;
+margin-bottom: 180px;
 margin-left: 80px;
 }
