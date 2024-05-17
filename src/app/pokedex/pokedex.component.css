@@ -103,7 +103,9 @@ header form{
 }
 
 /* Btn Filter */
-
+.container-filter{
+    display: flex;
+}
 
 .icon-filter{
     display: flex;
@@ -145,8 +147,8 @@ header form{
 }
 .card-list-pokemon .container{
     position: relative;
-    width:100px;
-    height: 100px;
+    width:150px;
+    height: 150px;
     background: transparent;
     border: 2px solid rgba(255, 255,255, 0.5);
     border-radius: 20px;
@@ -159,7 +161,6 @@ header form{
     transition: height .2s ease; 
 
 }
-
 .card-img img{
     position: relative;
     width:100px;
@@ -175,6 +176,7 @@ header form{
     overflow: hidden;
     transition: height .2s ease;
 }
+
 
 .card-info{
     padding: 15px;
